@@ -11,4 +11,7 @@ public class MyMath {
 
 		return result;
 	}
+	public int reverseNumber(int number) {
+		return -number;
+	}
 }

@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class MyFileUtilities {
+
 	public int[] readFile(String filepath) throws FileNotFoundException {
 		//ArrayList<Integer> grades = new ArrayList<Integer>();
 		int[] grades = null;
