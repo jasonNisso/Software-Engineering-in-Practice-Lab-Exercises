@@ -33,6 +33,14 @@ public class MyFileUtilitiesTest {
 		mfu.readFile("src/test/resources/not_ints.txt");
 	}
 	@Test
+	public void testEmptyFile() throws FileNotFoundException{
+		int[] methodOutput = mfu.readFile("src/test/resources/empty.txt");
+		System.out.print(methodOutput);
+		int[] expected = null;
+		assertArrayEquals(expected, methodOutput);
+		
+	}
+	@Test
 	public void testReadFile() throws FileNotFoundException {
 		//ClassLoader classloader = Thread.currentThread().getContextClassLoader();
 		//InputStream file = classloader.getResourceAsStream("grades.txt");
@@ -40,11 +48,10 @@ public class MyFileUtilitiesTest {
 		//File file = new File(classLoader.getResource("somefile").getFile());
 		//String filepath = this.getClass().getResource("/grades.txt").toURI();
 		//System.out.println(file.getAbsolutePath());
-		System.out.println("src/test/resources/grades.txt");
 		int[] methodOutput = mfu.readFile("src/test/resources/grades.txt");
-		System.out.println("src/test/resources/grades.txt");
+		System.out.println(methodOutput);
 		int[] expectedArray = {3,5,7,9,1,0,2,4,6,8};
-		assertArrayEquals(expectedArray, methodOutput); 
+		assertArrayEquals("checks if it produces the files output", expectedArray, methodOutput); 
 		
 	}
 }
