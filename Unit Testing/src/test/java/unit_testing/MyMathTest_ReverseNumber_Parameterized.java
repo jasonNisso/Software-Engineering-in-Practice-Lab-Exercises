@@ -13,53 +13,29 @@ import org.junit.Assert;
 
 @RunWith(Parameterized.class)
 public class MyMathTest_ReverseNumber_Parameterized {
+	//set Parameter names
 	@Parameter(value = 0)
-	public int numberZero;
-	@Parameter(value = 0)
-	public int zeroResult;
+	public int number;
+	@Parameter(value = 1)
+	public int result;
 	
-	/*@Parameter(value = 1)
-	public int numberOne;
-	@Parameter(value = -1)
-	public int oneResult;
-	
-	@Parameter(value = -2)
-	public int numberMinusTwo;
-	@Parameter(value = 2)
-	public int minusTwoResult;
-	
-	@Parameter(value = Integer.MAX_VALUE)
-	public int maxNumber;
-	@Parameter(value = -Integer.MAX_VALUE)
-	public int maxResult;
-*/
 
 	MyMath mm =  new MyMath();
+	//set pair of values for each test
 	@Parameters
 	public static Collection<Object[]> data() {
-		Object[][] data = new Object[][]{{1,-1},{-2,2},{Integer.MAX_VALUE,-Integer.MAX_VALUE}};
+		Object[][] data = new Object[][]{{0,0}, {1,-1},{-2,2},{Integer.MAX_VALUE,-Integer.MAX_VALUE}};
 
 		return Arrays.asList(data);
 	}
-
 	
+	/*
+	 * A unit test that is executed for each pair of
+	 * parameters.
+	 */
 	@Test
-	public void testReverseNumberWithNumberZero() {
-		Assert.assertEquals(zeroResult ,mm.reverseNumber(numberZero), 0.0001 );
+	public void testReverseNumberWithPairedNumbers() {
+		Assert.assertEquals(result ,mm.reverseNumber(number), 0.0001 );
 	}
-	/*@Test
-	public void testReverseNumberWithNumberOne() {
-		Assert.assertEquals(mm.reverseNumber(numberOne), oneResult, 0.0001 );
-	}
-	@Test
-	public void testReverseNumberWithNumberMinusTwo() {
-		Assert.assertEquals(mm.reverseNumber(numberMinusTwo), minusTwoResult, 0.0001 );
-	}
-	@Test
-	public void testReverseNumberWithMaxNumber() {
-		Assert.assertEquals(mm.reverseNumber(maxNumber), maxResult, 0.0001 );
-	}
-
-	*/
 
 }

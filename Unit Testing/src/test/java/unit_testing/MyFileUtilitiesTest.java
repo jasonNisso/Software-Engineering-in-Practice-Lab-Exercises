@@ -3,6 +3,7 @@ package unit_testing;
 import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;
+import java.util.InputMismatchException;
 
 //import org.junit.Before;
 //import java.io.InputStream;
@@ -29,13 +30,12 @@ public class MyFileUtilitiesTest {
 	public ExpectedException thrown = ExpectedException.none();
 	@Test
 	public void test_readFile_RuleException() throws FileNotFoundException {
-		thrown.expect(IllegalArgumentException.class);
+		thrown.expect(InputMismatchException.class);
 		mfu.readFile("src/test/resources/not_ints.txt");
 	}
 	@Test
 	public void testEmptyFile() throws FileNotFoundException{
 		int[] methodOutput = mfu.readFile("src/test/resources/empty.txt");
-		System.out.print(methodOutput);
 		int[] expected = null;
 		assertArrayEquals(expected, methodOutput);
 		
@@ -49,7 +49,7 @@ public class MyFileUtilitiesTest {
 		//String filepath = this.getClass().getResource("/grades.txt").toURI();
 		//System.out.println(file.getAbsolutePath());
 		int[] methodOutput = mfu.readFile("src/test/resources/grades.txt");
-		System.out.println(methodOutput);
+		//System.out.println(methodOutput);
 		int[] expectedArray = {3,5,7,9,1,0,2,4,6,8};
 		assertArrayEquals("checks if it produces the files output", expectedArray, methodOutput); 
 		
