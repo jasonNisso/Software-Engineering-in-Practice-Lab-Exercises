@@ -13,9 +13,9 @@ public class MyFileUtilities {
 		int[] grades = null;
 		ArrayList<Integer> gradeslist = new ArrayList<Integer>();
 		try {
-			//Scan the file in the filepath path
+			//Scan the file in the filePath path
 			Scanner scanner = new Scanner(new File(filepath));
-			//read each grade and append it to gradeslist
+			//read each grade and append it to gradesList
 			while(scanner.hasNext()) {
 				gradeslist.add( scanner.nextInt());
 			}

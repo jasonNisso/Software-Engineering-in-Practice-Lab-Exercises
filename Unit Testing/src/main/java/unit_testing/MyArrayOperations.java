@@ -1,5 +1,7 @@
 package unit_testing;
 
+import java.io.FileNotFoundException;
+
 public class MyArrayOperations {
 	public int[] gradeFrequencies(String filepath,MyFileUtilities utils) {
 		int[] frequencies = null;
@@ -9,6 +11,10 @@ public class MyArrayOperations {
 			grades = utils.readFile(filepath);
 			//initialize an array that will represent each grade's frequency
 			frequencies = new int[11];
+			for(int j = 0; j < frequencies.length; j++) {
+				frequencies[j] = 0;
+			}
+			
 			//for every grade add +1 to its frequency
 			for (int i = 0 ; i < grades.length ; i++) {
 				if (grades[i] == 0) {
@@ -45,7 +51,7 @@ public class MyArrayOperations {
 					frequencies[10] ++;
 				}
 			}
-		}catch(Exception e) {
+		}catch(FileNotFoundException e) {
 			System.out.println("Exception occurred");
 		}
 		
