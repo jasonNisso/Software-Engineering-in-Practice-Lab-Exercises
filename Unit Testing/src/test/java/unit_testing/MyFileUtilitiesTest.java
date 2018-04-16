@@ -18,12 +18,13 @@ public class MyFileUtilitiesTest {
 	//Create a Rule to catch the exceptions
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
-	//Test
+	//Test if an exception will be thrown if the method reads from a file that contains other types than integers
 	@Test
 	public void test_readFile_RuleException() throws FileNotFoundException {
 		thrown.expect(InputMismatchException.class);
 		mfu.readFile("src/test/resources/not_ints.txt");
 	}
+	//Test if the array will be empty if we give the method an empty file
 	@Test
 	public void testEmptyFile() throws FileNotFoundException{
 		int[] methodOutput = mfu.readFile("src/test/resources/empty.txt");
@@ -31,6 +32,7 @@ public class MyFileUtilitiesTest {
 		assertEquals(expected, methodOutput.length);
 		
 	}
+	//Test if the output expected is the same as the mfu.readFile() output
 	@Test
 	public void testReadFile() throws FileNotFoundException {
 		//Call mfu to produce an output
