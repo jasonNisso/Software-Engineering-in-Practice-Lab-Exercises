@@ -5,9 +5,11 @@ public class MyArrayOperations {
 		int[] frequencies = null;
 		int [] grades = null;
 		try {
+			//call MyFileUtilities instance to get the grades
 			grades = utils.readFile(filepath);
+			//initialize an array that will represent each grade's frequency
 			frequencies = new int[11];
-
+			//for every grade add +1 to its frequency
 			for (int i = 0 ; i < grades.length ; i++) {
 				if (grades[i] == 0) {
 					frequencies[0] ++;
