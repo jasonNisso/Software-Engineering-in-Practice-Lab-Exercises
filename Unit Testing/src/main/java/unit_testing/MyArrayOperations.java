@@ -1,14 +1,17 @@
 package unit_testing;
 
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 
 public class MyArrayOperations {
-	public int[] gradeFrequencies(String filepath,MyFileUtilities utils) {
+	public int[] gradeFrequencies(String filepath,MyFileUtilities utils)  {
 		int[] frequencies = null;
 		int [] grades = null;
 		try {
 			//call MyFileUtilities instance to get the grades
-			grades = utils.readFile(filepath);
+			int[] utpath = utils.readFile(filepath);
+			grades = Arrays.copyOf(utpath, utpath.length);
+
 			//initialize an array that will represent each grade's frequency
 			frequencies = new int[11];
 			for(int j = 0; j < frequencies.length; j++) {
@@ -19,6 +22,7 @@ public class MyArrayOperations {
 			for (int i = 0 ; i < grades.length ; i++) {
 				if (grades[i] == 0) {
 					frequencies[0] ++;
+
 				}
 				if (grades[i] == 1) {
 					frequencies[1]++;
