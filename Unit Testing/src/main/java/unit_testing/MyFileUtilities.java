@@ -5,17 +5,27 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * A class that provides file processing.
+ * @author Iason Nissopoulos
+ *
+ */
 public class MyFileUtilities {
-	//Reads a file that contains grades and returns its content in an integer array
+	/**
+	 * Reads a file that contains grades and parses them
+	 * to an array
+	 * @param the path of the file that contains the grades
+	 * @return the array with the grades
+	 * @exception IllegalArgumentException when an error 
+	 * happens while reading the file
+	 */
 	public int[] readFile(String filepath) throws FileNotFoundException {
-		//ArrayList<Integer> grades = new ArrayList<Integer>();
 		int[] grades = null;
 		ArrayList<Integer> gradeslist = new ArrayList<Integer>();
 		try {
-			//Scan the file in the filePath path
+			//Scans the file in the filePath path
 			Scanner scanner = new Scanner(new File(filepath));
-			//read each grade and append it to gradesList
+			//Reads each grade and appends it to gradesList
 			while(scanner.hasNext()) {
 				gradeslist.add( scanner.nextInt());
 			}
@@ -25,9 +35,9 @@ public class MyFileUtilities {
 			System.out.println("Error while reading the file");
 
 		    }
-		//construct an array named grades with the size of the arrayList
+		//Constructs an array named grades with the size of the arrayList
 		grades = new int[gradeslist.size()];
-		//append every gradesList element(grades) to grades array
+		//Appends every gradesList element(grades) to the grades array
 		for(int i = 0; i < gradeslist.size(); i++ ) {
 
 			grades[i] = gradeslist.get(i);

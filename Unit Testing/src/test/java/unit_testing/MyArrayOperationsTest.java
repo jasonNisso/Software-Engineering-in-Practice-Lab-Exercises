@@ -11,8 +11,16 @@ import java.io.FileNotFoundException;
 import org.junit.Rule;
 
 import org.junit.rules.ExpectedException;
-
+/**
+ * A class that provides test cases for the 
+ * array operations of the MyArrayOperations class.
+ * @author agkortzis (antonis.gkortzis@gmail.com)
+ */
 public class MyArrayOperationsTest {
+	/* 
+	 * A constructor  of the MyArrayOperations class
+	 * whose methods we are testing in this class
+	 */
 	MyArrayOperations mao = new MyArrayOperations();
 	
 	//The file's path 
@@ -21,11 +29,13 @@ public class MyArrayOperationsTest {
 	// Mock the MyFileUtilities dependency
 	MyFileUtilities mfu = mock(MyFileUtilities.class);
 	
-	//Create a Rule to catch the exceptions
+	/*
+	 * A test case for the exceptions caused 
+	 * when there is no file found.
+	 * Testing the exception is performed with a @Rule.
+	 */
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
-	
-	//Test if an exception will be thrown if the method doesnt Find a File
 	@Test
 	public void test_gradeFrequencies_RuleException()  {
 		thrown.expect(FileNotFoundException.class);

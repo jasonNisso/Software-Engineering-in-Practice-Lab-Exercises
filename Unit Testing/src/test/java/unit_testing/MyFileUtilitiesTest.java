@@ -9,13 +9,27 @@ import java.util.InputMismatchException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
+/**
+ * A class that provides test cases for the file processing 
+ * of the MyFileUtilities class.
+ * @author Iason Nissopoulos
+ *
+ */
 
 
 public class MyFileUtilitiesTest {
-
+	/* 
+	 * A constructor  of the MyFileUtilities class
+	 * whose methods we are testing in this class
+	 */
 	MyFileUtilities mfu = new MyFileUtilities();
-	//Create a Rule to catch the exceptions
+	
+	/*
+	 * A test case for the exceptions caused when
+	 * an error happens while reading a file.
+	 * Testing the exception is performed
+	 * with a @Rule.
+	 */
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 	//Test if an exception will be thrown if the method reads from a file that contains other types than integers
@@ -32,14 +46,14 @@ public class MyFileUtilitiesTest {
 		assertEquals(expected, methodOutput.length);
 		
 	}
-	//Test if the output expected is the same as the mfu.readFile() output
+	/*
+	 * A test case that examines the readFile method
+	 * with a normal text file.
+	 */
 	@Test
 	public void testReadFile() throws FileNotFoundException {
-		//Call mfu to produce an output
 		int[] methodOutput = mfu.readFile("src/test/resources/grades.txt");
-		//the expected results
 		int[] expectedArray = {3,5,7,9,1,0,2,4,6,8};
-		//check if the output is the same as the expected results
 		assertArrayEquals("checks if it produces the files output", expectedArray, methodOutput); 
 		
 	}
