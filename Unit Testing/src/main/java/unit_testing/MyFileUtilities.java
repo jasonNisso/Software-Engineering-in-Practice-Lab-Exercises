@@ -19,7 +19,7 @@ public class MyFileUtilities {
 	 * @exception IllegalArgumentException when an error 
 	 * happens while reading the file
 	 */
-	public int[] readFile(String filepath) throws FileNotFoundException {
+	public int[] readFile(String filepath)  {
 		int[] grades = null;
 		ArrayList<Integer> gradeslist = new ArrayList<Integer>();
 		try {
@@ -30,9 +30,9 @@ public class MyFileUtilities {
 				gradeslist.add( scanner.nextInt());
 			}
 			scanner.close();
-		} catch(IllegalArgumentException e) {
-
-			System.out.println("Error while reading the file");
+		} catch(FileNotFoundException e)  {
+			
+			throw new IllegalArgumentException("Error while reading the file"); 
 
 		    }
 		//Constructs an array named grades with the size of the arrayList

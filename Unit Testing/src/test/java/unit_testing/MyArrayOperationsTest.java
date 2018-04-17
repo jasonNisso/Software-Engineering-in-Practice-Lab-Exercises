@@ -5,12 +5,6 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
-
-
-import org.junit.Rule;
-
-import org.junit.rules.ExpectedException;
 /**
  * A class that provides test cases for the 
  * array operations of the MyArrayOperations class.
@@ -30,18 +24,6 @@ public class MyArrayOperationsTest {
 	MyFileUtilities mfu = mock(MyFileUtilities.class);
 	
 	/*
-	 * A test case for the exceptions caused 
-	 * when there is no file found.
-	 * Testing the exception is performed with a @Rule.
-	 */
-	@Rule
-	public ExpectedException thrown = ExpectedException.none();
-	@Test
-	public void test_gradeFrequencies_RuleException()  {
-		thrown.expect(FileNotFoundException.class);
-		mao.gradeFrequencies("src/test/resources/grades.txt", mfu);
-	}
-	/*
 	 * A test case that examines the gradeFrequencies method
 	 * with normal input values and mocking. 
 	 */
@@ -53,7 +35,7 @@ public class MyArrayOperationsTest {
 
 		//expected MyArrayOperations.gradeFrequencies() result
 		//int [] expected = new int[]{1,3,1,1,1,0,1,2,1,1,1};
-		int [] expected = new int[]{1,1,1,1,1,1,1,1,1,1,1};
+		int [] expected = new int[]{1,1,1,1,1,1,1,1,1,1,0};
 		
 		
 		assertArrayEquals(expected, mao.gradeFrequencies(filepath, mfu));

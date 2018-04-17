@@ -3,8 +3,6 @@ package unit_testing;
 import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;
-import java.util.InputMismatchException;
-
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -34,8 +32,8 @@ public class MyFileUtilitiesTest {
 	public ExpectedException thrown = ExpectedException.none();
 	//Test if an exception will be thrown if the method reads from a file that contains other types than integers
 	@Test
-	public void test_readFile_RuleException() throws FileNotFoundException {
-		thrown.expect(InputMismatchException.class);
+	public void test_readFile_RuleException() {
+		thrown.expect(IllegalArgumentException.class);
 		mfu.readFile("src/test/resources/not_ints.txt");
 	}
 	//Test if the array will be empty if we give the method an empty file
