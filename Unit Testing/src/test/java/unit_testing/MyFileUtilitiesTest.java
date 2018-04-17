@@ -44,7 +44,7 @@ public class MyFileUtilitiesTest {
 	}
 	//Test if the array will be empty if we give the method an empty file
 	@Test
-	public void testEmptyFile() throws FileNotFoundException{
+	public void testEmptyFile() {
 		int[] methodOutput = mfu.readFile("src/test/resources/empty.txt");
 		int expected = 0;
 		assertEquals(expected, methodOutput.length);
@@ -57,7 +57,7 @@ public class MyFileUtilitiesTest {
 	@Test
 	public void testReadFile() throws FileNotFoundException {
 		int[] methodOutput = mfu.readFile("src/test/resources/grades.txt");
-		int[] expectedArray = {3,5,7,9,1,0,2,4,6,8};
+		int[] expectedArray = {3,5,7,9,1,0,2,4,6,8,10,9,3,4,5,6,1,1,1,3};
 		assertArrayEquals("checks if it produces the files output", expectedArray, methodOutput); 
 		
 	}
