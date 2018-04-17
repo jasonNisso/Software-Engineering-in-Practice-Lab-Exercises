@@ -7,10 +7,6 @@ import org.junit.Test;
 
 import java.io.FileNotFoundException;
 
-
-import org.junit.Rule;
-
-import org.junit.rules.ExpectedException;
 /**
  * A class that provides test cases for the 
  * array operations of the MyArrayOperations class.
@@ -35,7 +31,7 @@ public class MyArrayOperationsTest {
 	 */
 	@Test
 	public void test_gradeFrequencies_Mocking() throws FileNotFoundException {
-		// Pre-defines the results of the mfu calls
+		// Predefines the results of the mfu calls
 		when(mfu.readFile(filepath)).thenReturn(new int[]{3,5,7,9,1,0,2,4,6,8,10,9,3,4,5,6,1,1,1,3});
 
 		int [] expected = new int[]{1,4,1,3,2,2,2,1,1,2,1};
