@@ -47,7 +47,7 @@ public class MyArrayOperationsTest {
 	 */
 	@Test
 	public void test_gradeFrequencies_Mocking() throws FileNotFoundException {
-		// Pre-define the results of the mfu calls
+		// Pre-defines the results of the mfu calls
 		when(mfu.readFile(filepath)).thenReturn(new int[]{3,5,7,9,1,0,2,4,6,8,10,9,3,4,5,6,1,1,1,3});
 
 		int [] expected = new int[]{1,4,1,3,2,2,2,1,1,2,1};

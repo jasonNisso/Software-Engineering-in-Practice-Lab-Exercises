@@ -31,18 +31,19 @@ public class MyFileUtilitiesTest {
 	 */
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
-	//Test if an exception will be thrown if the method reads from a file that contains other types than integers
-	@Test
-	public void test_readFileInputMismatchException_RuleException() {
-		thrown.expect(InputMismatchException.class);
-		mfu.readFile("src/test/resources/not_ints.txt");
-	}
+	//A test case for the exception caused when the method reads from a file that contains other types than integers
+
 	@Test
 	public void test_readFileIllegalArgumentException_RuleException() {
 		thrown.expect(IllegalArgumentException.class);
 		mfu.readFile("src/test/resources/wrong_name.txt");
 	}
-	//Test if the array will be empty if we give the method an empty file
+	@Test
+	public void test_readFileInputMismatchException_RuleException() {
+		thrown.expect(InputMismatchException.class);
+		mfu.readFile("src/test/resources/not_ints.txt");
+	}
+	//Tests if the array will be empty if we give the method an empty file
 	@Test
 	public void testEmptyFile() {
 		int[] methodOutput = mfu.readFile("src/test/resources/empty.txt");

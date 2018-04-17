@@ -16,7 +16,7 @@ public class MyMathTest {
 	 */
 	MyMath mm = new MyMath();
 	int[] array;
-	//we initialize an array which contains the number, denominator and result
+	//Initializes an array which contains the number, denominator and result
 	@Before
 
 	public void initializeArray() {
