@@ -30,18 +30,6 @@ public class MyArrayOperationsTest {
 	MyFileUtilities mfu = mock(MyFileUtilities.class);
 	
 	/*
-	 * A test case for the exceptions caused 
-	 * when there is no file found.
-	 * Testing the exception is performed with a @Rule.
-	 */
-	@Rule
-	public ExpectedException thrown = ExpectedException.none();
-	@Test
-	public void test_gradeFrequencies_RuleException()  {
-		thrown.expect(FileNotFoundException.class);
-		mao.gradeFrequencies("src/test/resources/gradedsdass.txt", mfu);
-	}
-	/*
 	 * A test case that examines the gradeFrequencies method
 	 * with normal input values and mocking. 
 	 */
