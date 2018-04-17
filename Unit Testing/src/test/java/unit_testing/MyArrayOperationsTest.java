@@ -41,7 +41,10 @@ public class MyArrayOperationsTest {
 		thrown.expect(FileNotFoundException.class);
 		mao.gradeFrequencies("src/test/resources/grades.txt", mfu);
 	}
-	//Test if the MyArrayOperations.gradeFrequencies() will give the correct output
+	/*
+	 * A test case that examines the gradeFrequencies method
+	 * with normal input values and mocking. 
+	 */
 	@Test
 	public void test_gradeFrequencies_Mocking() {
 		// Pre-define the results of the mfu calls
