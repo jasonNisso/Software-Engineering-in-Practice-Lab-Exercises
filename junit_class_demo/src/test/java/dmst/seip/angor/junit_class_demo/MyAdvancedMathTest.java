@@ -111,6 +111,27 @@ public class MyAdvancedMathTest {
 		Assert.assertArrayEquals(new int[]{-1,-2,3,4}, 
 				mam.reverseArray(testValues, mm));
 	}
-	
+	/*
+	 * A test case for the exceptions caused when
+	 * input value is over 30.
+	 */
+
+	@Test(expected = IllegalArgumentException.class)
+	public void test_powerofTwo_Over_TheTop_Exception() {
+		int power = Integer.MAX_VALUE;
+		mam.powerOfTwo(power);
+		
+	}
+	/*
+	 * A test case for the exceptions caused when
+	 * input value is negative.
+	 */
+
+	@Test(expected = IllegalArgumentException.class)
+	public void test_powerofTwo_Negative_Exception() {
+		int power = Integer.MIN_VALUE;
+		mam.powerOfTwo(power);
+		
+	}	
 
 }
