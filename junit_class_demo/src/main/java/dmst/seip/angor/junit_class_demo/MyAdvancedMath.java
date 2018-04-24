@@ -36,8 +36,7 @@ public class MyAdvancedMath {
 	 * @exception IllegalArgumentException when power is 
 	 * larger than 30 or smaller than 0
 	 */
-	// TODO this method has only a Parameterized test. 
-	// Can you complete the other edge tests?
+
 	public int powerOfTwo(int power) {
 		if (power == 0) {
 			return 1;

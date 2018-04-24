@@ -133,5 +133,14 @@ public class MyAdvancedMathTest {
 		mam.powerOfTwo(power);
 		
 	}	
+	/*
+	 * The following method aims to test the method powerOfTwo
+	 * when the input values is 0
+	 */
+	@Test
+	public void test_powerOfTwo_shouldReturnOne() {
+		int power = 0;
+		Assert.assertEquals(1, mam.powerOfTwo(power));
+	}
 
 }
